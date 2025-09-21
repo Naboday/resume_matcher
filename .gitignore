@@ -1,12 +1,44 @@
-# Ignore Python cache
+# Environment variables
+.env
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Ignore local uploads
-uploads/
-
-# Ignore virtual environment
+# Virtual Environment
 venv/
+env/
+ENV/
 
-# Ignore local env files
-.env
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
