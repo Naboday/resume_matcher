@@ -22,7 +22,7 @@ AI-powered resume analysis using Google Gemini to automatically score candidates
 
 ### Setup Steps
 # 1. Clone repository
-git clone https://github.com/yourusername/ai-resume-matcher-pro.git
+git clone https://github.com/Naboday/resume_matcher.git
 cd ai-resume-matcher-pro
 
 # 2. Install dependencies
@@ -33,7 +33,6 @@ echo "GEMINI_API_KEY=your_api_key_here" > .env
 
 # 4. Run application
 python app.py
-```
 
 **Access:** `http://localhost:5000`
 
@@ -60,10 +59,8 @@ python app.py
 ## 🔧 Technical Approach
 
 ### Architecture
-```
 Job Description → Gemini AI → Skill Extraction
 Resume Files → Text Processing → Score Calculation → Results Dashboard
-```
 
 ### Scoring Algorithm
 - **Technical Skills** (40%): Required skill matching
@@ -82,11 +79,11 @@ Resume Files → Text Processing → Score Calculation → Results Dashboard
 
 ### Environment Variables
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `GEMINI_API_KEY` | Your Google Gemini API key | Yes |
-| `UPLOAD_FOLDER` | Directory for temporary file storage | No (default: 'uploads') |
-| `MAX_CONTENT_LENGTH` | Maximum file upload size | No (default: 16MB) |
+|      Variable       |         Description        |         Required        |
+|---------------------|----------------------------|-------------------------|
+|  GEMINI_API_KEY     | Your Google Gemini API key | Yes                     |
+|  UPLOAD_FOLDER      | Directory for file storage | No (default: 'uploads') |
+|  MAX_CONTENT_LENGTH | Maximum file upload size   | No (default: 16MB)      |
 
 ### Getting a Gemini API Key
 
@@ -97,8 +94,6 @@ Resume Files → Text Processing → Score Calculation → Results Dashboard
 5. Copy the key to your `.env` file
 
 ## 📁 Project Structure
-
-```
 ai-resume-matcher-pro/
 │
 ├── app.py                 # Main Flask application
@@ -110,7 +105,6 @@ ai-resume-matcher-pro/
 │
 └── templates/
     └── index.html        # Frontend interface
-```
 
 ## 🔍 How It Works
 
@@ -120,9 +114,7 @@ ai-resume-matcher-pro/
 - **Context Understanding**: Gemini AI understands job context and priorities
 
 ### 2. Resume Analysis Pipeline
-```
 Resume Upload → Text Extraction → AI Processing → Skill Matching → Scoring → Insights
-```
 
 ### 3. Scoring Algorithm
 
@@ -213,10 +205,7 @@ The project includes `railway.json` for easy Railway deployment:
 For production deployment:
 
 1. **Use Gunicorn**
-   ```bash
    gunicorn --bind 0.0.0.0:$PORT app:app
-   ```
-
 2. **Set Environment Variables**
    - `GEMINI_API_KEY`
    - `PORT` (for cloud deployment)
@@ -239,59 +228,6 @@ For production deployment:
 - **Caching**: Browser caching strategies
 - **Minification**: Reduced payload sizes
 
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **API Key Error**
-   ```
-   Error: GEMINI_API_KEY not found in .env file
-   ```
-   **Solution**: Ensure your `.env` file contains a valid Gemini API key
-
-2. **File Upload Issues**
-   ```
-   Error: Unsupported file format
-   ```
-   **Solution**: Only use PDF and DOCX files for resumes, PDF/DOCX/TXT for job descriptions
-
-3. **Memory Issues**
-   ```
-   Error: Request entity too large
-   ```
-   **Solution**: Reduce file sizes or increase `MAX_CONTENT_LENGTH` setting
-
-4. **AI Analysis Failures**
-   - Check API key validity
-   - Verify internet connection
-   - Ensure sufficient API quota
-
-### Debug Mode
-
-Enable debug mode for development:
-```python
-app.run(debug=True)
-```
-
-## 🤝 Contributing
-
-### Development Setup
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-### Code Style
-- Follow PEP 8 for Python code
-- Use meaningful variable names
-- Add docstrings for functions
-- Maintain consistent formatting
-
-## 📝 License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
